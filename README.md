@@ -2,6 +2,15 @@
 
 This repository will serve as a testing platform for new ideas and tools. It's sort of like a blog, but with examples over words.
 
+## Setup
+
+```bash
+git clone https://github.com/Olical/lab.git
+cd lab
+make bootstrap
+make serve
+```
+
 ## Author
 
 [Oliver Caldwell][] / [@OliverCaldwell][]
