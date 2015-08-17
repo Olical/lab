@@ -16,7 +16,7 @@ Find the full [unlicense][] in the `UNLICENSE` file, but here's a snippet.
 
 Do what you want. Learn as much as you can. Unlicense more software.
 
-[lab]: lab.oli.me.uk
+[lab]: http://lab.oli.me.uk/
 [unlicense]: http://unlicense.org/
 [Oliver Caldwell]: http://oli.me.uk/
 [@OliverCaldwell]: https://twitter.com/OliverCaldwell
