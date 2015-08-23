@@ -8,6 +8,7 @@
     padding: 10px 20px;
     background-color: $colour-off-white;
     display: block;
+    transition: background 200ms ease;
 
     &:hover {
       background-color: darken($colour-off-white, 20%)
