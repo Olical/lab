@@ -1,0 +1,16 @@
+.posts {
+  list-style: none;
+  padding: 0;
+  margin-top: 40px;
+
+  li a {
+    border-top: 1px solid $colour-brown;
+    padding: 10px 20px;
+    background-color: $colour-off-white;
+    display: block;
+
+    &:hover {
+      background-color: darken($colour-off-white, 20%)
+    }
+  }
+}
