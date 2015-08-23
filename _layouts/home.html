@@ -2,4 +2,12 @@
 layout: base
 ---
 
-{{content}}
+<section class="page-content">
+    {{content}}
+
+    <ul class="posts">
+        {% for post in site.posts %}
+        <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+        {% endfor %}
+    </ul>
+</section>
