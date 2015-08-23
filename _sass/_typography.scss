@@ -1,0 +1,28 @@
+.site-header {
+  color: $colour-blue;
+}
+
+.site-title a {
+  text-decoration: none;
+
+
+  &:visited {
+    color: inherit;
+  }
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.page-title {
+  font-size: 1.2em;
+}
+
+a {
+  color: $colour-blue;
+}
+
+a:visited {
+  color: $colour-purple;
+}
