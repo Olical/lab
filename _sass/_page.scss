@@ -1,13 +1,15 @@
+$page-width: 920px;
+
 .page-content {
   padding: 10px;
 }
 
 .page-center {
-  width: 800px;
+  width: $page-width;
   margin: 0 auto;
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: $page-width) {
   .page-center {
     width: auto;
   }
