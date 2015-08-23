@@ -1,7 +1,7 @@
 .posts {
   list-style: none;
   padding: 0;
-  margin-top: 40px;
+  margin: 40px 0;
 
   li a {
     border-top: 1px solid $colour-brown;
@@ -13,5 +13,9 @@
     &:hover {
       background-color: darken($colour-off-white, 20%)
     }
+  }
+
+  .post-date {
+    opacity: 0.3;
   }
 }
