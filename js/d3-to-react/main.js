@@ -1,4 +1,4 @@
-/* global React, d3 */
+/* global React, d3, _ */
 
 // BASIC GRAPH
 var Graph = React.createClass({
@@ -38,7 +38,6 @@ React.render(
 var width = 960
 var height = 500
 
-// {x, y, i}
 var circles = []
 var i = 0
 
@@ -59,9 +58,9 @@ var Particles = React.createClass({
         return {
           cx: d.x,
           cy: d.y,
-          r: 10,
+          r: d.r,
           stroke: d3.hsl(d.i % 360, 1, 0.5),
-          strokeOpacity: 1
+          strokeOpacity: d.o
         }
       })
 
@@ -73,18 +72,36 @@ var Particles = React.createClass({
       .prop('onMouseMove', function () { return addParticle })
 
     function addParticle (e) {
-      circles.push({
+      var circle = {
         x: e.nativeEvent.offsetX,
         y: e.nativeEvent.offsetY,
-        i: i++
-      })
+        i: i++,
+        o: 1,
+        r: 1e-6
+      }
 
+      setTimeout(function () {
+        _.remove(circles, circle)
+        renderParticles()
+      }, 1200)
+
+      circles.push(circle)
       renderParticles()
     }
 
     return svg.toReact()
   }
 })
+
+function animloop () {
+  _.each(circles, function (c) {
+    c.o -= 0.02
+    c.r += 1.1
+  })
+  renderParticles()
+  window.requestAnimationFrame(animloop)
+}
+animloop()
 
 function renderParticles () {
   React.render(React.createElement(Particles, {
