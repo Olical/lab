@@ -93,23 +93,15 @@ var Particles = React.createClass({
   }
 })
 
-function requestAnimFrame () {
-  return window.requestAnimationFrame ||
-  window.webkitRequestAnimationFrame ||
-  window.mozRequestAnimationFrame ||
-  function (callback) {
-    window.setTimeout(callback, 1000 / 60)
-  }
-}
-
 function animloop () {
   _.each(circles, function (c) {
     c.o -= 0.02
     c.r += 1.1
   })
   renderParticles()
-  requestAnimFrame(animloop)
+  window.requestAnimationFrame(animloop)
 }
+animloop()
 
 function renderParticles () {
   React.render(React.createElement(Particles, {
@@ -117,5 +109,4 @@ function renderParticles () {
   }), document.getElementById('mount-particles'))
 }
 
-animloop()
-
+renderParticles()
