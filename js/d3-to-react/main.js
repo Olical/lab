@@ -54,15 +54,11 @@ var Particles = React.createClass({
       .append('circle')
       .prop('className', 'particle')
       .prop('key', function (d) { return d.i })
-      .prop('style', function (d) {
-        return {
-          cx: d.x,
-          cy: d.y,
-          r: d.r,
-          stroke: d3.hsl(d.i % 360, 1, 0.5),
-          strokeOpacity: d.o
-        }
-      })
+      .prop('cx', function (d) { return d.x })
+      .prop('cy', function (d) { return d.y })
+      .prop('r', function (d) { return d.r })
+      .prop('stroke', function (d) { return d3.hsl(d.i % 360, 1, 0.5) })
+      .prop('strokeOpacity', function (d) { return d.o })
 
     svg.append('rect')
       .prop('className', 'cover')
@@ -82,7 +78,6 @@ var Particles = React.createClass({
 
       setTimeout(function () {
         _.remove(circles, circle)
-        renderParticles()
       }, 1200)
 
       circles.push(circle)
