@@ -2,6 +2,9 @@
 
 // BASIC GRAPH
 var Graph = React.createClass({
+  propTypes: {
+    data: React.PropTypes.arrayOf(React.PropTypes.number)
+  },
   render: function () {
     var chart = d3.select(document.createElement('div'))
 
