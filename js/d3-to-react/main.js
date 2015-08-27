@@ -35,7 +35,7 @@ React.render(
 )
 
 // PARTICLES
-var width = 921
+var width = 1024
 var height = 500
 
 var circles = []
