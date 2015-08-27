@@ -1,4 +1,4 @@
-/* global d3, React, _ */
+/* global d3, React */
 
 (function () {
   function getProps (el) {
@@ -61,15 +61,15 @@
 
   function d3_selection_toReact (node) {
     var elName = node.nodeName.toLowerCase()
-    var children = node.childNodes
+    var children = Array.prototype.slice.call(node.childNodes)
     var props = getProps(node)
 
     if (node.nodeType === 3) {
       return node.textContent
-    } else if (_.isEmpty(children)) {
+    } else if (children.length === 0) {
       return React.createElement(elName, props)
     } else {
-      return React.createElement(elName, props, _.map(children, d3_selection_toReact))
+      return React.createElement(elName, props, children.map(d3_selection_toReact))
     }
   }
 })()
