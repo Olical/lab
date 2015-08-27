@@ -3,12 +3,11 @@
 // BASIC GRAPH
 var Graph = React.createClass({
   render: function () {
-    var data = [4, 8, 15, 16, 23, 42]
     var chart = d3.select(document.createElement('div'))
 
     chart
       .selectAll('.bar')
-      .data(data)
+      .data(this.props.data)
       .enter().append('div')
       .prop({
         className: 'bar',
@@ -29,8 +28,10 @@ var Graph = React.createClass({
   }
 })
 
+var data = [4, 8, 15, 16, 23, 42]
+
 React.render(
-  React.createElement(Graph),
+  React.createElement(Graph, {data: data}),
   document.getElementById('mount-chart')
 )
 
