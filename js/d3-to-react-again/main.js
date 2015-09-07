@@ -32,7 +32,8 @@ var Chart = React.createClass({
     .x(function (d) { return x(d.date) })
     .y(function (d) { return y(d.close) })
 
-    var svg = d3.select(ReactFauxDOM.createElement('svg'))
+    var node = ReactFauxDOM.createElement('svg')
+    var svg = d3.select(node)
     .attr('width', width + margin.left + margin.right)
     .attr('height', height + margin.top + margin.bottom)
     .append('g')
@@ -66,7 +67,7 @@ var Chart = React.createClass({
     .attr('class', 'line')
     .attr('d', line)
 
-    return svg.node().toReact()
+    return node.toReact()
   }
 })
 
